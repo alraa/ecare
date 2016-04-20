@@ -3,6 +3,27 @@ $(window).load(function(){
 		$('body').addClass('ios');
 	};
 	$('body').removeClass('loaded'); 
+	
+	
+	  setTimeout(function() {
+		  var mainDivs = $(".col-height"); //Получаем все элементы с классом column
+		  var maxHeight = 0;
+		  for (var i = 0; i < mainDivs.length; ++i) {
+			if (maxHeight < $(mainDivs[i]).height()) { //Находим максимальную высоту
+			  maxHeight = $(mainDivs[i]).height(); 
+			}
+		  }
+		  for (var i = 0; i < mainDivs.length; ++i) {
+			$(mainDivs[i]).css({'min-height':maxHeight}); //Устанавливаем всем элементам максимальную высоту
+		  }
+		}, 300);
+	$('.ui-datepicker-header a').click(function(){
+		
+		  var mainDivs2 = $(".box-form-application__left").height(); //Получаем все элементы с классом column
+		  $(".form-application-wrap").height(mainDivs2);
+		
+	});
+	
 });
 $(function(){
 
@@ -36,6 +57,8 @@ $(function(){
 	  $('html, body').animate({scrollTop: 0}, 1000);
 	  return false;
 	 });
+	
+	
     
 });
 

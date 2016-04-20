@@ -1312,8 +1312,9 @@ header{
 .box-for-application__img{ position:absolute; left:-46px; bottom:0px; z-index:3;}
 .box-for-application__img img{ display:block;}
 
-.box-form-application{ float:right; width:765px; max-width:100%; min-height:466px; margin:56px -1px 0 0; position:relative; z-index:2;}
-.form-application{ height:466px; background:#3e454c; width:221px; float:right; text-align:center; z-index:3; position:relative; padding:47px 0 20px 0;}
+.box-form-application{ float:right; width:765px; max-width:100%; margin:56px -1px 0 0; position:relative; z-index:2;}
+.form-application{ position:relative; padding:47px 0 20px 0;}
+.form-application-wrap{ background:#3e454c; width:221px; float:right; text-align:center; z-index:3; position:relative; }
 .form-application__title{ font-size:21px; color:#ff7f66; line-height:23px; font-weight:400; font-family:'Raleway'; padding:20px 0 12px 0; position:relative;}
 .form-application__title:after{ width: 170px; height: 2px; background-color: #cd6e5f; position:absolute; left:50%; margin-left:-85px; bottom:0px; content:'';}
 .form-group{ margin:6px 0 0 0; padding-bottom:0px;}
@@ -1347,7 +1348,16 @@ select:required:invalid {
 .select{ display:inline-block; vertical-align:top; width:155px; margin:10px 7px 0px 0px;}
 
 .box-form-application__left{ width:100%; margin-right:-221px; padding-right:221px; float:left;}
-.box-form-application__left-cont{ background:#f3f3f3; width:100%; height:466px; padding:53px 24px 20px 29px; border-radius: 5px 0px 0px 0px; -moz-border-radius: 5px 0px 0px 0px; -webkit-border-radius: 5px 0px 0px 0px; box-shadow:0 0px 10px 0px rgba(98,113,132,0.1); -moz-box-shadow:0 0px 10px 0px rgba(98,113,132,0.1); webkit-box-shadow:0 0px 10px 0px rgba(98,113,132,0.1);}
+.box-form-application__left-cont{ background:#f3f3f3; width:100%; padding:53px 24px 20px 29px; border-radius: 5px 0px 0px 0px; -moz-border-radius: 5px 0px 0px 0px; -webkit-border-radius: 5px 0px 0px 0px; box-shadow:0 0px 10px 0px rgba(98,113,132,0.1); -moz-box-shadow:0 0px 10px 0px rgba(98,113,132,0.1); webkit-box-shadow:0 0px 10px 0px rgba(98,113,132,0.1);}
+.box-form-application__left-cont:after{
+	display: block;
+	content: '';
+	width: 221px; height: 120px;
+	background: #3e454c;
+	position: absolute;
+	right: 0;
+	bottom: 0px;
+}
 .box-form-application__title{ font-size:46px; line-height:46px; color:#5a5a5a; text-transform:uppercase; text-align:center; font-family:'Dosis'; padding-bottom:5px; font-weight:400; width:100%; letter-spacing:0.5px;}
 .box-form-application__title span{ font-weight:700;}
 
@@ -1529,6 +1539,8 @@ footer{
 	.header-top{ height:65px;}
 	.btn-with-icon{ position:relative; top:0px; left:0px; margin-top:25px;}	
 	.btn-with-icon.for-schedule-an-eye-exam{ position:relative; right:0px; float:left; margin-left:15px;} 
+	.line-menu{text-align: center;}
+	.line-menu .btn-with-icon{ float: none; display: inline-block; vertical-align: top; width: auto!important; padding-right: 10px; padding-left: 55px;}
 	
 	.button-nav{ display:block; float:right;}
 	.menu{ position:absolute; left:0px; width:100%; top:97px; background:#2196f3; height:auto; z-index:102; padding:6px 0 6px 0;}
@@ -1568,7 +1580,9 @@ footer{
 @media screen and (max-width: 650px) {	
 	.box-form-application__left{ float:none; display:block; width:100%; margin-right:0px; padding-right:0px; height:auto;}
 	.box-form-application__left-cont{ height:auto;}
-	.form-application{ float:none; display:block; width:100%; height:auto;}
+	.box-form-application__left-cont:after{ display: none;}
+	.col-height{ height: auto!important; min-height: 0px!important;}
+	.form-application-wrap{ float:none; display:block; width:100%; height:auto;}
 }
 @media screen and (max-width: 520px) {	
 	.btn-with-icon{ font-size:12px; width:145px;}
@@ -1589,6 +1603,7 @@ footer{
 }
 @media screen and (max-width: 450px) {	
 	.btn-with-icon__icon{ display:none;}
+	.line-menu .btn-with-icon{ float: none; display: inline-block; vertical-align: top; width: auto!important; padding-left: 10px; padding-right: 10px;}
 	.btn-with-icon{ padding-left:0px;  width:85px;  font-size:11px;}
 	.btn-with-icon.for-schedule-an-eye-exam{ width:150px; margin-left:5px;}
 	
